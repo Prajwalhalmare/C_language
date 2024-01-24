@@ -1,0 +1,996 @@
+//*****VARIABLES AND DATA TYPES*****
+#include<stdio.h>
+int main()
+{
+//***C program to print Integer data types.***
+   // Integer value with positive data.
+    int a = 9;
+ // integer value with negative data.
+    int b = -9;
+// U or u is Used for Unsigned int in C.
+    int c = 89U;
+// L or l is used for long int in C.
+    long int d = 99998L;
+ 
+    printf("Integer value with positive data: %d\n", a);
+    printf("Integer value with negative data: %d\n", b);
+    printf("Integer value with an unsigned int data: %u\n",c);
+    printf("Integer value with an long int data: %ld", d);
+
+   //***C program to print Character data types.***
+    char ch = 'a';
+    char C; 
+    printf("Value of ch: %c\n", ch); 
+    ch++;
+    printf("Value of ch after increment is: %c\n", ch); 
+    /* c is assigned ASCII values which corresponds to the character 'c'
+    a-->97 b-->98 c-->99 */
+    // here c will be printed
+    C = 99;
+    printf("Value of C: %c", C);
+ 
+//***C Program to demonstrate use of Floating types***
+    float x = 9.0f;
+    float y = 2.5f;
+    // 2x10^-4
+    float z = 2E-4f;
+    printf("%f\n", x);
+    printf("%f\n", y);
+    printf("%f", z);
+
+//***C Program to demonstrate use of double data type***
+    double p = 123123123.00;
+    double q = 12.293123;
+    double r = 2312312312.123123; 
+    printf("%lf\n", p);
+    printf("%lf\n", q);
+    printf("%lf", r);
+
+//***Void Data Type***
+// function return type void
+void exit(int check);
+// Function without any parameter can accept void.
+int print(void);
+// memory allocation function which
+// returns a pointer to void.
+void *malloc (size_t size);
+// C program to demonstrat use of void pointers
+    int val = 30;
+    void* ptr = &val;
+    printf("%d", *(int*)ptr);
+
+//***C Program to print size of different data type in C***
+     int size_of_int = sizeof(int);
+    int size_of_char = sizeof(char);
+    int size_of_float = sizeof(float);
+    int size_of_double = sizeof(double);
+ 
+    printf("The size of int data type : %d\n", size_of_int);
+    printf("The size of char data type : %d\n",
+           size_of_char);
+    printf("The size of float data type : %d\n",
+           size_of_float);
+    printf("The size of double data type : %d",
+           size_of_double);
+  return 0;
+}
+
+//*****OPERATORS AND INSTRUCTION*****
+
+#include <stdio.h>
+
+int main()
+{
+
+    //***RELATIONAL OPERATOR***
+
+    printf("%d \n", 4 == 4);
+    printf("%d \n", 4 < 3);
+    printf("%d \n", 3 < 4);
+    printf("%d \n", 4 < 4);
+    printf("%d \n", 4 <= 4);
+    printf("%d \n", 4 > 3);
+    printf("%d \n", 3 > 4);
+    printf("%d \n", 4 > 4);
+    printf("%d \n", 4 >= 4);
+    printf("%d \n", 4 != 4);
+    printf("%d \n", 3 != 4);
+
+    //***LOGICAL OPERATOR***
+    printf("%d \n", 3 < 4 && 3 < 5);
+    printf("%d \n", 3 < 4 && 5 < 4);
+    printf("%d \n", 3 < 4 && 5 < 4);
+    printf("%d \n", 3 > 4 && 5 > 4);
+    printf("%d \n", 3 < 4 && 3 < 5);
+    printf("%d \n", !(3 < 4 && 3 < 5));
+    printf("%d \n", !(4 < 3 || 5 < 3));
+
+    //***ASSIGNMENT OPERATOR***
+    int a = 10;
+    a += 10;
+    printf("a+10 = %d \n", a);
+    a -= 10;
+    printf("a-10 = %d \n", a);
+    a *= 10;
+    printf("a*10 = %d \n", a);
+    a /= 10;
+    printf("a/10 = %d \n", a);
+    a %= 10;
+    printf("a%c10 = %d \n", '%', a);
+
+    //***ODD EVEN NUMBER***
+    int num;
+    printf("Enter the number:");
+    scanf("%d", &num);
+
+    if (num % 2 == 0)
+    {
+        printf("The number is divisible by 2 Or Number is even");
+    }
+    else
+    {
+        printf("The number is not divisible by 2 Or number is odd");
+    }
+
+    //***TRUE OR FALSE STATEMENT***
+    //* 1.If its Monday & its Raining*
+    int isMonday;
+    scanf("%d", &isMonday);
+    int isRaining;
+    scanf("%d", &isRaining);
+    if (isMonday || isRaining)
+        printf("True");
+    else
+        printf("False");
+
+    // *2.If a number greater than 9 & less than 100*
+    int num1;
+    printf("Enter the number:");
+    scanf("%d", &num1);
+
+    if (num1 > 9 && num1 < 100)
+        printf("True");
+    else
+        printf("False");
+
+    //* 3.Average of 3 numbers*
+    float number1, number2, number3;
+    float sum, average;
+
+    printf("Enter three numbers: ");
+    scanf("%f %f %f", &number1, &number2, &number3);
+
+    sum = number1 + number2 + number3;
+    average = sum / 3.0;
+
+    printf("Sum = %f\n", sum);
+    printf("Average = %f\n", average);
+
+    //* 4.Checking given character is digit or not*
+    char ch;
+    printf("Enter the character:");
+    scanf("%c", &ch);
+
+    if (ch >= 0 || ch <= 9)
+    {
+        printf("Given character is digit");
+    }
+    else
+    {
+        printf("Given character is not digit");
+    }
+
+    //*5.Finding smallest among given number*
+    int p, q, r;
+    printf("Enter the number P:");
+    scanf("%d", &p);
+
+    printf("Enter the number Q:");
+    scanf("%d", &q);
+
+    printf("Enter the number R:");
+    scanf("%d", &r);
+
+    if (p > q && p > r)
+    {
+        printf("P is greater number");
+    }
+    else if (q > p && q > r)
+    {
+        printf("Q is greater number");
+    }
+    else
+    {
+        printf("R is greater number");
+    }
+}
+
+
+
+//*****Conditional statement*****
+
+//***Conditional Operator***
+#include <stdio.h>
+
+int main() {
+    int age;
+    printf("Enter the age:");
+    scanf("%d",&age);
+    
+    age >= 18 ? printf("Adult"):printf("Teenager");
+
+    return 0;
+}
+
+//*1.If-Else statement*
+#include <stdio.h>
+
+int main() {
+  int age;
+  printf("Enter the age:");
+  scanf("%d",&age);
+   
+  if(age>=18)
+  {
+      printf("You are eleigible to vote");
+  }
+  else{
+      printf("You are not eligible to vote");
+  }
+    return 0;
+}
+
+
+//** Nested If-else**
+#include <stdio.h>
+
+int main() {
+  int numb1;
+  printf("Enter the number:");
+  scanf("%d",&numb1);
+
+    if(numb1>=0)
+    {
+        printf("Positive number\n");
+         if(numb1%2 == 0)
+         {
+             printf("Even Number");
+         }
+         else{
+             printf("Odd Number");
+         }
+    }
+    else{
+        printf("Negative Number");
+    }
+    return 0;
+}
+
+
+//*2.1Else-if statement*
+#include <stdio.h>
+int main() {
+ 
+int marks;
+printf("Enter your marks:");
+scanf("%d",&marks);
+
+if(marks>=90)
+{
+    printf("Excellent");
+}
+else if(marks>=80 && marks<=90)
+{
+    printf("Very Good");
+}
+else if(marks>70)
+{
+    printf("Good");
+}
+else{
+    printf("Try Hard");
+}
+ return 0;
+}
+
+//*2.2Else-if statement*
+// Program to find given character is in upper case or not
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter character:");
+    scanf("%c",&ch);
+    
+    if(ch>='A' && ch<='Z')
+    {
+        printf("Uppercase");
+    }
+    else if(ch>='a' && ch<='z')
+    {
+        printf("Lowercase");
+    }
+    else
+    {
+        printf("Not english character");
+    }
+    return 0;
+}
+
+
+//*1.1 Switch Case*
+#include <stdio.h>
+
+int main() {
+    int day;
+    printf("Enter day(1-7):");
+    scanf("%d",&day);
+    
+    switch(day){
+        case 1: printf("Monday");
+        break;
+        case 2: printf("Tuesday");
+        break;
+        case 3: printf("Wednesday");
+        break;
+        case 4: printf("Thursday");
+        break;
+        case 5: printf("Friday");
+        break;
+        case 6: printf("Saturday");
+        break;
+        case 7: printf("Sunday");
+        break;
+        default:printf("Not a valid day");
+        break;
+    }
+    return 0;
+}
+
+//*1.2Switch Case*
+#include <stdio.h>
+
+int main() {
+   char day;
+    printf("Enter day(1-7):");
+    scanf("%s",&day);
+    
+    switch(day){
+        case 'm': printf("Monday");
+        break;
+        case 't': printf("Tuesday");
+        break;
+        case 'w': printf("Wednesday");
+        break;
+        case 'T': printf("Thursday");
+        break;
+        case 'f': printf("Friday");
+        break;
+        case 's': printf("Saturday");
+        break;
+        case 'S': printf("Sunday");
+        break;
+        default:printf("Not a valid day");
+        break;
+}
+    return 0;
+}
+
+
+//***For Loop***
+#include <stdio.h>
+
+int main() {
+   
+for(int i=1;i<=5;i++)
+{
+    printf("%d\n",i);
+}
+
+    for(int i=5;i>=0;i--)
+{
+    printf("%d\n",i);
+}
+
+for(float i=1;i<=5.0;i++)
+{
+    printf("%f\n",i);
+}
+
+for(char ch='a';ch<='z';ch++)
+{
+    printf("%c\n",ch);
+}
+    return 0;
+}
+
+
+//*1.1While Loop*
+#include <stdio.h>
+
+int main()
+{
+  int i=1;
+  while(i<=10){
+    printf("%d\n",i);
+    i++;
+  }
+    
+  
+//*1.2While Loop*
+// printing given number 
+#include <stdio.h>
+
+int main() {
+    int i=0;
+    int n;
+    printf("Enter the number:");
+    scanf("%d",&n);
+
+    while(i<=n)
+    {
+        printf("%d\n",i);
+        i++;
+    }
+    return 0;
+}
+
+//*1.1Do-While loop*
+#include <stdio.h>
+
+int main() {
+   int i=0;
+   do{
+       printf("%d",i);
+       i++;
+   }while(i<=5);
+
+    return 0;
+}
+
+
+//*1.2Print the sum of first n natural numbers*
+#include <stdio.h>
+
+int main() {
+   
+int n;
+printf("Enter the number:");
+scanf("%d",&n);
+ int sum=0;
+ for(int i=1;i<=n;i++)
+ {
+    sum=sum+i;
+ }
+ printf("Sum Is:%d",sum);
+    return 0;
+}
+
+
+//*1.3Print the sum of first n natural numbers in reverse*
+#include <stdio.h>
+
+int main() {
+   
+int n;
+printf("Enter the number:");
+scanf("%d",&n);
+ int sum=0;
+ for(int i=n;i>=1;i--)
+ {
+     printf("%d\n",i);
+ }
+
+    return 0;
+}
+
+
+//*1.4Print the table of given number*
+#include <stdio.h>
+
+int main() {
+   int n;
+printf("Enter the number:");
+scanf("%d",&n);
+
+for(int i=1;i<=10;i++)
+    printf("%d\n",n*i);
+    return 0;
+}
+
+
+
+//*1.5Keep taking number as input from user until user enters odd number*
+
+#include <stdio.h>
+
+int main() {
+for(int i=1; ;i++)
+{
+    int n;
+printf("Enter the number:");
+scanf("%d",&n);
+
+if(n%2 == 1)
+{
+    printf("Loop Ends here");
+    break;
+}
+}
+    return 0;
+}
+
+
+//*1.5Keep taking number as input from user until user enters multiple of 7*
+
+#include <stdio.h>
+
+int main() {
+for(int i=1; ;i++)
+{
+    int n;
+printf("Enter the number:");
+scanf("%d",&n);
+
+if(n%7 == 0)
+{
+    printf("Loop Ends here");
+    break;
+}
+}
+    return 0;
+}
+
+
+//*1.6Print numbers except some one like 3*
+
+#include <stdio.h>
+
+int main() {
+for(int i=1;i<=5;i++)
+{
+    if(i==3){
+        continue;
+    }
+    printf("%d\n",i);
+}
+    return 0;
+}
+
+
+//**Print all odd numbers from 5 to 50**
+
+#include <stdio.h>
+
+int main() {
+for(int i=5;i<=50;i++)
+{
+  if(i%2 == 0)
+  {
+      continue;
+  }
+    printf("%d\n",i);
+}
+    return 0;
+}
+
+
+
+//**Print all even numbers from 5 to 50**
+
+#include <stdio.h>
+
+int main() {
+for(int i=5;i<=50;i++)
+{
+  if(i%2 == !0)
+  {
+      continue;
+  }
+    printf("%d\n",i);
+}
+    return 0;
+}
+
+
+
+//**Factorial of any number** 
+#include <stdio.h>
+
+int main() {
+ int n,fact=1;
+printf("Enter the number:");
+scanf("%d",&n);
+
+for(int i=1;i<=n;i++)
+{
+    fact=fact*i;
+    
+}
+printf("Factorial is:%d",fact);
+
+    return 0;
+}
+
+
+//**Table of given number in reverse manner**
+#include <stdio.h>
+
+int main() {
+ int n;
+printf("Enter the number:");
+scanf("%d",&n);
+
+for(int i=10;i>=1;i--)
+{
+  printf("%d\n",n*i); 
+    
+}
+
+    return 0;
+}
+
+
+//**Sum of number from 5 to 50**
+#include <stdio.h>
+
+int main() {
+ int sum=0;
+for(int i=5;i<=50;i++)
+{
+    sum+=i;
+}
+printf("Sum is:%d\n",sum);
+    return 0;
+}
+
+
+//***Function**
+#include <stdio.h>
+//Function Prototype(func. Declaration)
+void printHello();
+
+int main() {
+    //Function Call
+ printHello();
+ printHello();
+    return 0;
+}
+//Function Definition
+void printHello(){
+    printf("Hello World\n");
+}
+
+        ***OR***
+
+#include <stdio.h>
+//Function Declaration and Definition
+void printHello(){
+    printf("Hello World\n");
+}
+
+int main() {
+    //Function Call
+ printHello();
+ printHello();
+    return 0;
+}
+
+
+// Two functions to print Hello and Goodbye
+#include <stdio.h>
+//Function Prototype(func. Declaration)
+void printHello();
+void printgoodBye();
+int main() {
+    //Function Call
+ printHello();
+ printgoodBye();
+    return 0;
+}
+//Function Definition
+void printHello(){
+    printf("Hello World\n");
+}
+
+void printgoodBye(){
+    printf("Good Bye\n");
+}
+
+
+//***Print sum of two numbers using function***
+#include <stdio.h>
+
+int sum(int a, int b);
+int main() {
+   int a,b;
+    printf("Enter the first number:");
+    scanf("%d",&a);
+
+    printf("Enter the second number:");
+    scanf("%d",&b);
+
+    int s = sum(a,b);
+    printf("Sum is:%d",s);
+    return 0;
+}
+    int sum(int a, int b){
+        return a+b;
+    }
+
+
+//Program to print table using function
+#include <stdio.h>
+
+void printTable(int n);
+int main() {
+   int n;
+    printf("Enter the number of which table you want:");
+    scanf("%d",&n);
+
+    printTable(n);
+    return 0;
+}
+
+void printTable(int n){
+    for(int i=1;i<=10;i++)
+    {
+        printf("\n%d",i*n);
+    }
+}
+
+
+//Program to print average of 3 numbers using function
+#include <stdio.h>
+int avg(int a, int b, int c);
+int main() {
+    int a,b,c;
+    printf("Enter the first number:");
+    scanf("%d",&a);
+
+    printf("Enter the second number:");
+    scanf("%d",&b);
+    
+    printf("Enter the third number:");
+    scanf("%d",&c);
+    
+    int average = avg(a,b,c);
+    printf("Average:%d",average);
+    return 0;
+}
+
+int avg(int a, int b, int c){
+    return (a+b+c)/3;
+}
+
+//
+#include <stdio.h>
+void calculateValue(int value);
+int main() {
+   int value;
+    printf("Enter the value of product:");
+    scanf("%d",&value);
+
+    calculateValue(value);
+    return 0;
+}
+
+void calculateValue(int value){
+   value = value + (0.18*value);
+   printf("Price with GST:%d",value);
+}
+
+
+// squre of any number
+#include <stdio.h>
+#include <math.h>
+int main() {
+   int a;
+    printf("Enter the number:");
+    scanf("%d",&a);
+    
+    int sq = pow(a,2);
+    printf("The square is:%d",sq);
+    return 0;
+}
+
+
+//Area of square circle rectangle
+#include <stdio.h>
+int areaofSquare(int side);
+float areaofCircle(float r);
+int areaofRectangle(int length, int breadth);
+int main() {
+    int side = 4;
+    float r=5.0;
+    int length=7;
+    int breadth=6;
+
+    int s = areaofSquare(side);
+    printf("Area of Square is:%d",s);
+    float c = areaofCircle(r);
+     printf("\nArea of circle is:%f",c);
+    int rec = areaofRectangle(length,breadth);
+     printf("\nArea of Rectangle is:%d",rec);
+    return 0;
+}
+
+int areaofSquare(int side)
+{
+    return side*side;
+}
+float areaofCircle(float r)
+{
+    return r*r*3.14;
+}
+int areaofRectangle(int length, int breadth)
+{
+    return length*breadth;
+}
+
+
+// Recursion
+#include <stdio.h>
+
+void printHello(int n);
+int main() {
+    printHello(5);
+    return 0;
+}
+    void printHello(int n)
+    {
+        if(n == 0)
+        {
+            return;
+        }
+         printf("Hello world\n");
+         printHello(n-1);
+    }
+
+
+
+//Sum of n numbers using recursion
+#include <stdio.h>
+
+int sum(int n);
+int main() {
+    
+    printf("Sum is:%d",sum(5));
+
+    return 0;
+}
+int sum(int n)
+{
+    if(n == 1)
+    {
+        return 1;
+    }
+    
+    int sum_nm1 = sum(n-1);//sum of n-1
+    int sumofN = sum_nm1 + n;
+}
+
+
+//Sum of n numbers using recursion
+#include <stdio.h>
+
+int fact(int n);
+int main() {
+    
+    printf("Factorial is:%d",fact(4));
+
+    return 0;
+}
+int fact(int n)
+{
+    if(n == 0)
+    {
+        return 1;
+    }
+    
+    int fact_nm1 = fact(n-1);//fact of n-1
+    int factofN = fact_nm1 * n;
+   
+}
+
+
+//Converting Celsius to Fahrenheit
+#include <stdio.h>
+
+float convertTemp(float Celsius);
+int main() {
+     float Celsius;
+     printf("Enter the temp in celsius to fahrenheit:");
+     scanf("%f",&Celsius);
+    printf("Fahrenhiet:%f",convertTemp(Celsius));
+
+    return 0;
+}
+
+float convertTemp(float Celsius)
+{
+    float fahreht = 1.8*(Celsius) + 32;
+    return fahreht;
+    
+}
+
+//Percentage function
+#include <stdio.h>
+
+int percentage(int math,int sci,int sanskrit);
+int main() {
+    
+    printf("Percentage:%d",percentage(98,95,99));
+    return 0;
+}
+
+int percentage(int math,int sci,int sanskrit){
+    
+    return ((math+sci+sanskrit)/3);
+}
+
+
+//Fibbonacci Series
+#include <stdio.h>
+
+int fib(int n);
+
+int main() {
+   printf("%d",fib(6));
+
+    return 0;
+}
+int fib(int n)
+{
+    if(n == 0)
+    {
+      return 0;  
+    }
+    if(n == 1)
+    {
+       return 1; 
+    }
+    
+    int fib_min1 = fib(n-1);
+    int fib_min2 = fib(n-2);
+    int fibs = fib_min1+fib_min2;
+    return fibs;
+}
+
+
+//Pointers
+#include <stdio.h>
+
+int main() {
+  
+    int age = 19;
+    int *ptr = &age;
+    
+    printf("Address of age:%u",&age);
+    printf("\nThe age is:%d",*ptr);
+    return 0;
+}
+
+
+//Pointers
+#include <stdio.h>
+
+int main() {
+  
+    int x;
+    int *ptr;
+    
+    ptr = &x;
+    *ptr =0;
+    printf("X:%u\n",x);
+    printf("*ptr:%d\n",*ptr);
+    
+    *ptr+=5;
+    printf("X:%u\n",x);
+    printf("*ptr:%d\n",*ptr);
+    
+    (*ptr)++;
+    printf("X:%u\n",x);
+    printf("*ptr:%d\n",*ptr);
+    return 0;
+}
